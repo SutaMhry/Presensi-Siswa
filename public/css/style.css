@@ -1,0 +1,11 @@
+.status-hadir {
+    color: #198754; /* Warna teks hijau gelap */
+}
+
+.status-izin {
+    color: #ffc107; /* Warna teks kuning gelap */
+}
+
+.status-alpa {
+    color: #dc3545; /* Warna teks merah gelap */
+}
