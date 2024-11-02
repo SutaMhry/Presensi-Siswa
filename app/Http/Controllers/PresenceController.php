@@ -136,13 +136,18 @@ class PresenceController extends Controller
     }
     
 
-
-    public function studentsattendance () {
-        $studentsattendance = Presence::with('user')->get();
-            return view('presence.for-teacher', [
-                'studentsattendance' => $studentsattendance,
-            ]);
+    public function studentsattendance() {
+        $month = request('month', date('Y-m'));
+        $presences = Presence::with('user') // Mengambil data user yang berelasi
+            ->whereMonth('date', date('m', strtotime($month)))
+            ->whereYear('date', date('Y', strtotime($month)))
+            ->get();
+        
+        return view('presence.for-teacher', [
+            'presences' => $presences,
+        ]);
     }
+    
 
     public function destroy (Presence $presence) {
         $presence->delete();

@@ -12,7 +12,7 @@ class Classroom extends Model
     protected $fillable = ['name', 'hmteacher_id'];
 
     public function users() {   
-        return $this->hasmany(User::class);
+        return $this->hasmany(User::class, 'classroom_id');
     }
 
     public function hmteacher()

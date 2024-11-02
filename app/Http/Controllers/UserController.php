@@ -219,7 +219,7 @@ class UserController extends Controller
             return redirect()->route('student-management')->with('successcreateuser', 'Data berhasil diperbarui');
         } elseif ($user->role == 'teacher') {
             return redirect()->route('teacher-management')->with('successcreateuser', 'Data berhasil diperbarui');
-        } else {
+        }  else {
             return redirect()->route('admin-management')->with('successcreateuser', 'Data berhasil diperbarui');
         }
     }
